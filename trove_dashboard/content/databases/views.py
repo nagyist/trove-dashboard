@@ -530,7 +530,7 @@ class ManageRootView(horizon_tables.DataTableView):
                                args=[instance_id])
             exceptions.handle(self.request,
                               _('Unable to determine if instance root '
-                                'is enabled.'),
+                                'access is enabled.'),
                               redirect=redirect)
 
         root_enabled_list = []

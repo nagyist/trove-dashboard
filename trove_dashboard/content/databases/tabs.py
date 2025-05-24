@@ -43,7 +43,7 @@ class OverviewTab(tabs.Tab):
                 root_show.rootEnabled)
         except Exception:
             context["root_enabled"] = _('Unable to obtain information on '
-                                        'root user')
+                                        'root access.')
         return context
 
     def get_template_name(self, request):

@@ -526,7 +526,7 @@ class AdvancedAction(workflows.Action):
                 self.cleaned_data['config'] = cfg.id
             except Exception:
                 raise forms.ValidationError(_("Unable to find configuration "
-                                              "group!"))
+                                              "group."))
         else:
             self.cleaned_data['config'] = None
 
@@ -540,9 +540,9 @@ class AdvancedAction(workflows.Action):
                     bkup = api.trove.backup_get(self.request, backup)
                     self.cleaned_data['backup'] = bkup.id
                 except Exception:
-                    raise forms.ValidationError(_("Unable to find backup!"))
+                    raise forms.ValidationError(_("Unable to find backup."))
             else:
-                raise forms.ValidationError(_("A backup must be selected!"))
+                raise forms.ValidationError(_("A backup must be selected."))
 
             cleaned_data['master'] = None
         elif initial_state == 'master':
@@ -552,10 +552,10 @@ class AdvancedAction(workflows.Action):
                     api.trove.instance_get(self.request, master)
                 except Exception:
                     raise forms.ValidationError(
-                        _("Unable to find master instance!"))
+                        _("Unable to find master instance."))
             else:
                 raise forms.ValidationError(
-                    _("A master instance must be selected!"))
+                    _("A master instance must be selected."))
 
             cleaned_data['flavor'] = None
             cleaned_data['backup'] = None
@@ -575,9 +575,10 @@ class Advanced(workflows.Step):
 class LaunchInstance(workflows.Workflow):
     slug = "launch_instance"
     name = _("Launch Instance")
-    finalize_button_name = _("Launch")
-    success_message = _('Launched %(count)s named "%(name)s".')
-    failure_message = _('Unable to launch %(count)s named "%(name)s".')
+    finalize_button_name = _("Launch Instance")
+    success_message = _('Launched instance %(count)s with name "%(name)s".')
+    failure_message = _('Unable to launch instance %(count)s '
+                        'with name "%(name)s".')
     success_url = "horizon:project:databases:index"
     default_steps = (SetInstanceDetails,
                      SetNetwork,
