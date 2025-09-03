@@ -346,7 +346,7 @@ class DatabaseConfigurationsTests(test.TestCase):
             self.assert_mock_multiple_calls_with_same_arguments(
                 self.mock_configuration_parameters_list, 2,
                 mock.call(test.IsHttpRequest(), test.IsA(str), test.IsA(str)))
-            self.assertFormError(res, "form", 'value',
+            self.assertFormError(res.context["form"], 'value',
                                  ['Value must be a number.'])
         finally:
             config_param_manager.delete(config.id)

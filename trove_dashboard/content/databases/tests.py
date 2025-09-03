@@ -801,7 +801,7 @@ class DatabaseTests(test.TestCase):
         res = self.client.post(url, post)
 
         msg = forms.EditUserForm.validation_error_message
-        self.assertFormError(res, "form", None, [msg])
+        self.assertFormError(res.context["form"], None, [msg])
 
     @test.create_mocks({api.trove: ('database_list', 'user_show_access')})
     def test_access_detail_get(self):
