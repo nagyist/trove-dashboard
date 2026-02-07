@@ -2,15 +2,16 @@
 # Andi Chandler <andi@gowling.com>, 2017. #zanata
 # Andi Chandler <andi@gowling.com>, 2020. #zanata
 # Andi Chandler <andi@gowling.com>, 2022. #zanata
+# Andi Chandler <andi@gowling.com>, 2026. #zanata
 msgid ""
 msgstr ""
 "Project-Id-Version: trove-dashboard VERSION\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2025-09-08 09:00+0000\n"
+"POT-Creation-Date: 2025-12-15 09:59+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2022-05-25 09:23+0000\n"
+"PO-Revision-Date: 2026-01-07 03:35+0000\n"
 "Last-Translator: Andi Chandler <andi@gowling.com>\n"
 "Language-Team: English (United Kingdom)\n"
 "Language: en_GB\n"
@@ -276,6 +277,12 @@ msgstr "Configuration Group Overview"
 
 msgid "Configuration Group Values"
 msgstr "Configuration Group Values"
+
+msgid "Configuration Group attached to instance."
+msgstr "Configuration Group attached to instance."
+
+msgid "Configuration Group attached to instances."
+msgstr "Configuration Group attached to instances."
 
 msgid "Configuration Groups"
 msgstr "Configuration Groups"
@@ -659,6 +666,9 @@ msgstr "Initialise Databases"
 msgid "Instance \"%s\" successfully updated."
 msgstr "Instance \"%s\" successfully updated."
 
+msgid "Instance ID"
+msgstr "Instance ID"
+
 msgid "Instance Name"
 msgstr "Instance Name"
 
@@ -697,6 +707,9 @@ msgstr "Launched %(count)s named \"%(name)s\"."
 msgid "Launched cluster \"%s\""
 msgstr "Launched cluster \"%s\""
 
+msgid "Location Policy"
+msgstr "Location Policy"
+
 msgid "Log"
 msgstr "Log"
 
@@ -708,6 +721,9 @@ msgstr "Log Length"
 
 msgid "Log length must be a nonnegative integer."
 msgstr "Log length must be a non-negative integer."
+
+msgid "Log:"
+msgstr "Log:"
 
 msgid "Logs"
 msgstr "Logs"
@@ -837,8 +853,14 @@ msgstr "Number of Instances"
 msgid "Number of Shards"
 msgstr "Number of Shards"
 
+msgid "Number of instances in the cluster (read only)."
+msgstr "Number of instances in the cluster (read only)."
+
 msgid "Number of instances in the cluster."
 msgstr "Number of instances in the cluster."
+
+msgid "Number of shards (read only)."
+msgstr "Number of shards (read only)."
 
 msgid "Old Flavor"
 msgstr "Old Flavour"
@@ -928,6 +950,11 @@ msgid ""
 "Password is only visible immediately after the root is enabled or reset."
 msgstr ""
 "Password is only visible immediately after the root is enabled or reset."
+
+msgid ""
+"Please note: The new value must be greater than the existing volume size."
+msgstr ""
+"Please note: The new value must be greater than the existing volume size."
 
 msgid "Project"
 msgstr "Project"

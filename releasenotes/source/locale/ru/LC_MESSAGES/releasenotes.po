@@ -2,15 +2,16 @@
 # Artem <amikhalev90@gmail.com>, 2017. #zanata
 # Dmitriy Chubinidze <dcu995@gmail.com>, 2025. #zanata
 # Ivan Anfimov <lazekteam@gmail.com>, 2025. #zanata
+# Ivan Anfimov <lazekteam@gmail.com>, 2026. #zanata
 msgid ""
 msgstr ""
 "Project-Id-Version: Trove Dashboard Release Notes\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-09-16 07:36+0000\n"
+"POT-Creation-Date: 2025-12-15 09:59+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2025-09-17 06:48+0000\n"
+"PO-Revision-Date: 2026-02-06 08:41+0000\n"
 "Last-Translator: Ivan Anfimov <lazekteam@gmail.com>\n"
 "Language-Team: Russian\n"
 "Language: ru\n"
@@ -51,11 +52,14 @@ msgstr "Примечания к выпуску 2025.1"
 msgid "2025.2 Series Release Notes"
 msgstr "Примечания к выпуску 2025.2"
 
-msgid "24.0.0-6"
-msgstr "24.0.0-6"
+msgid "24.0.0-7"
+msgstr "24.0.0-7"
 
-msgid "25.0.0.0rc1"
-msgstr "25.0.0.0rc1"
+msgid "25.0.0"
+msgstr "25.0.0"
+
+msgid "25.0.0-7"
+msgstr "25.0.0-7"
 
 msgid "7.0.0"
 msgstr "7.0.0"
@@ -218,6 +222,13 @@ msgstr ""
 "создание и удаление групп; добавление, редактирование и удаление параметров; "
 "присоединение и отсоединение групп к запущенным инстансам; и указание группы "
 "во время создания инстанса."
+
+msgid ""
+"Support for Python 3.9 has been removed. Now the minimum Python version "
+"supported is 3.10."
+msgstr ""
+"Поддержка Python 3.9 была удалена. Минимальная версия Python, которая теперь "
+"поддерживается — Python 3.10."
 
 msgid ""
 "The current caching initializes the instance list for the grow cluster "
