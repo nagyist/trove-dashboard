@@ -26,7 +26,8 @@ from trove_dashboard import api
 
 class CreateDatabaseForm(forms.SelfHandlingForm):
     instance_id = forms.CharField(widget=forms.HiddenInput())
-    name = forms.CharField(label=_("Name"))
+    name = forms.CharField(label=_("Name"),
+                           help_text=_("Name of the database."))
     character_set = forms.CharField(
         label=_("Character Set"), required=False,
         help_text=_("Optional character set for the database."))
@@ -58,7 +59,9 @@ class ResizeVolumeForm(forms.SelfHandlingForm):
         widget=forms.TextInput(attrs={'readonly': 'readonly'}),
         required=False,
     )
-    new_size = forms.IntegerField(label=_("New Size (GB)"))
+    new_size = forms.IntegerField(label=_("New Size (GB)"),
+                                  help_text=_("New volume size must be larger "
+                                              "than the current size."))
 
     def __init__(self, request, *args, **kwargs):
         super(ResizeVolumeForm, self).__init__(request, *args, **kwargs)
@@ -152,9 +155,11 @@ class PromoteToReplicaSourceForm(forms.SelfHandlingForm):
 
 class CreateUserForm(forms.SelfHandlingForm):
     instance_id = forms.CharField(widget=forms.HiddenInput())
-    name = forms.CharField(label=_("Name"))
+    name = forms.CharField(label=_("Name"),
+                           help_text=_("Username for the database user."))
     password = forms.RegexField(
         label=_("Password"),
+        help_text=_("Password for the database user."),
         widget=forms.PasswordInput(render_value=False),
         regex=validators.password_validator(),
         error_messages={'invalid': validators.password_validator_msg()})
@@ -202,13 +207,21 @@ class EditUserForm(forms.SelfHandlingForm):
     user_host = forms.CharField(
         label=_("Host"), required=False,
         widget=forms.TextInput(attrs={'readonly': 'readonly'}))
-    new_name = forms.CharField(label=_("New Name"), required=False)
+    new_name = forms.CharField(label=_("New Name"),
+                               help_text=_("New username for the database "
+                                           "user."),
+                               required=False)
     new_password = forms.RegexField(
-        label=_("New Password"), required=False,
+        label=_("New Password"),
+        help_text=_("New password for the database user."),
+        required=False,
         widget=forms.PasswordInput(render_value=False),
         regex=validators.password_validator(),
         error_messages={'invalid': validators.password_validator_msg()})
-    new_host = forms.CharField(label=_("New Host"), required=False)
+    new_host = forms.CharField(label=_("New Host"),
+                               help_text=_("New host from which the user can "
+                                           "connect."),
+                               required=False)
 
     validation_error_message = _('A new name or new password or '
                                  'new host must be specified.')
@@ -247,7 +260,9 @@ class EditUserForm(forms.SelfHandlingForm):
 
 class AttachConfigurationForm(forms.SelfHandlingForm):
     instance_id = forms.CharField(widget=forms.HiddenInput())
-    configuration = forms.ChoiceField(label=_("Configuration Group"))
+    configuration = forms.ChoiceField(label=_("Configuration Group"),
+                                      help_text=_("Select a configuration "
+                                                  "group to attach."))
 
     def __init__(self, request, *args, **kwargs):
         super(AttachConfigurationForm, self).__init__(request, *args, **kwargs)

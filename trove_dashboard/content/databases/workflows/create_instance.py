@@ -84,8 +84,10 @@ def parse_datastore_and_version_text(datastore_and_version):
 class SetInstanceDetailsAction(workflows.Action):
     availability_zone = forms.ChoiceField(
         label=_("Availability Zone"),
+        help_text=_("Availability zone where the instance will be created."),
         required=False)
-    name = forms.CharField(max_length=80, label=_("Instance Name"))
+    name = forms.CharField(max_length=80, label=_("Instance Name"),
+                           help_text=_("Name of the database instance."))
     volume = forms.IntegerField(label=_("Volume Size"),
                                 min_value=0,
                                 initial=1,
@@ -369,6 +371,7 @@ class AddDatabasesAction(workflows.Action):
                            help_text=_("Initial admin user to add"))
     password = forms.CharField(widget=forms.PasswordInput(),
                                label=_("Password"),
+                               help_text=_("Password for the admin user."),
                                required=False)
     host = forms.CharField(label=_("Allowed Host (optional)"),
                            required=False,

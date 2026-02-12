@@ -86,6 +86,7 @@ class BaseClusterForm(forms.SelfHandlingForm):
 
 class LaunchForm(BaseClusterForm):
     name = forms.CharField(label=_("Cluster Name"),
+                           help_text=_("Name of the database cluster."),
                            max_length=80)
     datastore = forms.ChoiceField(
         label=_("Datastore"),

@@ -29,8 +29,12 @@ LOG = logging.getLogger(__name__)
 
 
 class CreateConfigurationForm(forms.SelfHandlingForm):
-    name = forms.CharField(label=_("Name"))
-    description = forms.CharField(label=_("Description"), required=False)
+    name = forms.CharField(label=_("Name"),
+                           help_text=_("Name of the configuration group."))
+    description = forms.CharField(label=_("Description"),
+                                  help_text=_("Optional description of the "
+                                              "configuration group."),
+                                  required=False)
     datastore = forms.ChoiceField(
         label=_("Datastore"),
         help_text=_("Type and version of datastore."))
@@ -111,8 +115,11 @@ class CreateConfigurationForm(forms.SelfHandlingForm):
 
 
 class AddParameterForm(forms.SelfHandlingForm):
-    name = forms.ChoiceField(label=_("Name"))
-    value = forms.CharField(label=_("Value"))
+    name = forms.ChoiceField(label=_("Name"),
+                             help_text=_("Configuration parameter name."))
+    value = forms.CharField(label=_("Value"),
+                            help_text=_("Value for the configuration "
+                                        "parameter."))
 
     def __init__(self, request, *args, **kwargs):
         super(AddParameterForm, self).__init__(request, *args, **kwargs)

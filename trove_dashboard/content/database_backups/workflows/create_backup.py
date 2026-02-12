@@ -28,8 +28,11 @@ LOG = logging.getLogger(__name__)
 
 
 class BackupDetailsAction(workflows.Action):
-    name = forms.CharField(max_length=80, label=_("Name"))
-    instance = forms.ChoiceField(label=_("Database Instance"))
+    name = forms.CharField(max_length=80, label=_("Name"),
+                           help_text=_("Name of the backup."))
+    instance = forms.ChoiceField(label=_("Database Instance"),
+                                 help_text=_("Select the database instance to "
+                                             "backup."))
     description = forms.CharField(max_length=512, label=_("Description"),
                                   widget=forms.TextInput(),
                                   required=False,
