@@ -331,7 +331,9 @@ class AddAccessAction(workflows.Action):
         * TROVE_ADD_DATABASE_PERMS = []
         """
     is_public = forms.BooleanField(label=_("Is Public"),
-                                   required=False)
+                                   required=False,
+                                   help_text=_("Enables external access "
+                                               "to the database."))
     allowed_cidrs = forms.MultiIPField(label=_("Allowed CIDRs"),
                                        required=False,
                                        version=forms.IPv4 | forms.IPv6,
