@@ -28,6 +28,8 @@ LOG = logging.getLogger(__name__)
 
 class BackupStrategyDetailsAction(workflows.Action):
     instance = forms.ChoiceField(label=_("Database Instance"),
+                                 help_text=_("Select the database instance "
+                                             "for backup strategy."),
                                  required=False,
                                  initial=None)
     swift_container = forms.CharField(max_length=256,
