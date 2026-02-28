@@ -69,7 +69,7 @@ class CreateBackupStrategy(workflows.Workflow):
     name = _("Backup Strategy")
     finalize_button_name = _("Create Backup Strategy")
     success_message = _("Backup strategy created")
-    failure_message = _('Unable to create backup strategy')
+    failure_message = _('Unable to create backup strategy.')
     success_url = "horizon:project:backup_strategies:index"
     default_steps = [SetBackupStrategyDetails]
 

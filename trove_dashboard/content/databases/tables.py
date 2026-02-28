@@ -510,7 +510,7 @@ class DetachConfiguration(tables.BatchAction):
 
 class EnableRootAction(tables.Action):
     name = "enable_root_action"
-    verbose_name = _("Enable Root")
+    verbose_name = _("Enable Root Access")
     policy_rules = (("database", "instance:extension:root:create"),)
 
     def handle(self, table, request, obj_ids):
@@ -519,12 +519,13 @@ class EnableRootAction(tables.Action):
             table.data[0].enabled = True
             table.data[0].password = password
         except Exception:
-            messages.error(request, _('There was a problem enabling root.'))
+            messages.error(request, _('There was a problem enabling '
+                                      'root access.'))
 
 
 class DisableRootAction(tables.Action):
     name = "disable_root_action"
-    verbose_name = _("Disable Root")
+    verbose_name = _("Disable Root Access")
     policy_rules = (("database", "instance:extension:root:delete"),)
 
     def allowed(self, request, instance):
@@ -561,18 +562,19 @@ class ManageRootTable(tables.DataTable):
     name = tables.Column('name', verbose_name=_('Instance Name'))
     policy_rules = (("database", "instance:extension:root:index"), )
     enabled = tables.Column('enabled',
-                            verbose_name=_('Has Root Ever Been Enabled'),
+                            verbose_name=_('Has Root Access '
+                                           'Ever Been Enabled'),
                             filters=(d_filters.yesno, d_filters.capfirst),
-                            help_text=_("Status if root was ever enabled "
-                                        "for an instance."))
+                            help_text=_("Status if root access was ever "
+                                        "enabled for an instance."))
     password = tables.Column('password', verbose_name=_('Password'),
                              help_text=_("Password is only visible "
-                                         "immediately after the root is "
-                                         "enabled or reset."))
+                                         "immediately after the root access "
+                                         "is enabled or reset."))
 
     class Meta(object):
         name = "manage_root"
-        verbose_name = _("Manage Root")
+        verbose_name = _("Manage Root Access")
         row_actions = (EnableRootAction, DisableRootAction,)
 
 

@@ -55,7 +55,7 @@
       },
       {
         id: 'created',
-        title: gettext('Created'),
+        title: gettext('Created at'),
         priority: 1,
       },
       {
@@ -71,7 +71,7 @@
       },
       {
         id: 'status',
-        title: gettext('status'),
+        title: gettext('Status'),
         priority: 1,
       }]
     };
